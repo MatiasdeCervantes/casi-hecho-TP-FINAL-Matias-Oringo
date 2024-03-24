@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% for autor in autors %}
+
+    <p>Nombre: {{autor.nombre}}</p>
+    
+    <button>
+    <a href="{% url 'AutoresEditar' autor.nombre %}">  Editar Autor  </a>
+    </button>
+    
+    <button>
+    <a href="{% url 'AutoresEliminar' autor.nombre %}">  Eliminar Autor  </a>
+    </button>
+
+    ------------------------------------
+    {% endfor %}
+
+    
+    <br>
+    
+    <button>
+    <a href="{% url 'AutoresCrear' %}">  Crear Autor  </a>
+    </button>
+</body>
+</html>
